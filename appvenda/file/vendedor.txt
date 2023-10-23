@@ -1,0 +1,4 @@
+cliente 1;113456789;client1@email;
+cliente 2;223456789;client2@email;
+cliente 3;333456789;client3@email;
+cliente 4;443456789;client4@email;
