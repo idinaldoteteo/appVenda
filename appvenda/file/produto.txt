@@ -1,8 +1,8 @@
-V;P;Marca item 1;true;Descricao item 1;100;25.25;1000
-V;M;Marca item 2;false;Descricao item 2;200;35.35;2000
-V;G;Marca item 3;true;Descricao item 3;300;45.45;3000
-V;GG;Marca item 4;false;Descricao item 4;400;55.55;4000
-L;Apredendo Java;Editora 1;100;Descricao item 1;100;25.25;1000
-L;Apredendo C#;Editora 2;200;Descricao item 2;200;35.35;2000
-L;Apredendo Javascript;Editora 3;500;Descricao item 3;300;45.45;3000
-L;Apredendo Python;Editora 4;1100;Descricao item 4;400;55.55;4000
+V;P;Marca item 1;true;Descricao item 1;1000;25.25;true;4;
+V;M;Marca item 2;false;Descricao item 2;2000;35.35;true;3;
+V;G;Marca item 3;true;Descricao item 3;3000;45.45;true;2;
+V;GG;Marca item 4;false;Descricao item 4;4000;55.55;true;1;
+L;Apredendo Java;Editora 1;100;Descricao item 1;5000;25.25;true;4;
+L;Apredendo C#;Editora 2;200;Descricao item 2;6000;35.35;true;3;
+L;Apredendo Javascript;Editora 3;500;Descricao item 3;7000;45.45;true;2;
+L;Apredendo Python;Editora 4;1100;Descricao item 4;8000;55.55;true;1;

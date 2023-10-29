@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infinet.appvenda.model.domain.Livro;
 import br.edu.infinet.appvenda.model.domain.Produto;
+import br.edu.infinet.appvenda.model.domain.Vendedor;
 import br.edu.infinet.appvenda.model.domain.Vestuario;
 import br.edu.infinet.appvenda.model.service.ProdutoService;
 
@@ -30,7 +31,9 @@ public class ProdutoLoader implements ApplicationRunner{
 		
 		String linha = leitura.readLine();
 		String[] conteudo = null;
-		int posicao = 0;		
+		int posicao = 0;
+		int idVendedor = 0;
+		
 		while(linha != null) {
 			
 			conteudo = linha.split(";");			
@@ -47,6 +50,8 @@ public class ProdutoLoader implements ApplicationRunner{
 				vestuario.setCodigo(Integer.parseInt(conteudo[++posicao]));
 				vestuario.setPreco(Float.parseFloat(conteudo[++posicao]));
 				vestuario.setEstoque(Boolean.parseBoolean(conteudo[++posicao]));
+				idVendedor = Integer.parseInt(conteudo[++posicao]);
+				vestuario.setVendedor(Vendedor.CriarVendedor(idVendedor));
 				
 				service.incluir(vestuario);
 				
@@ -61,6 +66,8 @@ public class ProdutoLoader implements ApplicationRunner{
 				livro.setCodigo(Integer.parseInt(conteudo[++posicao]));
 				livro.setPreco(Float.parseFloat(conteudo[++posicao]));
 				livro.setEstoque(Boolean.parseBoolean(conteudo[++posicao]));
+				idVendedor = Integer.parseInt(conteudo[++posicao]);
+				livro.setVendedor(Vendedor.CriarVendedor(idVendedor));
 				
 				service.incluir(livro);
 				
@@ -72,9 +79,9 @@ public class ProdutoLoader implements ApplicationRunner{
 			linha = leitura.readLine();
 		}
 		
-		for (Produto produtoItem : service.ObterLista()) {
-			System.out.println(produtoItem);
-		}
+		service.GerarRelatorioProdutos();
+		
+		service.GerarRelatorioProdutosPorVendedorComId(1);		
 		
 		leitura.close();
 		

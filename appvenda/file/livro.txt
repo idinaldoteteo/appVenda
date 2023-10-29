@@ -1,4 +1,4 @@
-Apredendo Java;Editora 1;100;Descricao item 1;100;25.25;1000
-Apredendo C#;Editora 2;200;Descricao item 2;200;35.35;2000
-Apredendo Javascript;Editora 3;500;Descricao item 3;300;45.45;3000
-Apredendo Python;Editora 4;1100;Descricao item 4;400;55.55;4000
+Apredendo Arquitetura Java;Editora 1;100;Descricao item 1;10;25.25;1000;1
+Apredendo Arquitetura C#;Editora 2;200;Descricao item 2;20;35.35;2000;2
+Apredendo Arquitetura Javascript;Editora 3;500;Descricao item 3;30;45.45;3000;3
+Apredendo Arquitetura Python;Editora 4;1100;Descricao item 4;40;55.55;4000;4

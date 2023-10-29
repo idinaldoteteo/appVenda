@@ -1,18 +1,34 @@
 package br.edu.infinet.appvenda.model.domain;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tbproduto")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Produto {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer Id;
 	private String descricao;
 	private int codigo;
 	private float preco;
 	private boolean estoque;
-	private List<Produto> produtos;
+	@ManyToOne
+	@JoinColumn(name = "id_vendedor")
+	private Vendedor vendedor;
 	
 	@Override
 	public String toString() {		
-		return String.format("[PRODUTO] %s - %s - %.2f - %s", descricao, codigo, preco, estoque);
+		return String.format("[PRODUTO] id:%d - %s - %s - %.2f - %s", Id, descricao, codigo, preco, estoque);
 	}
 	
 	public String getDescricao() {
@@ -39,12 +55,17 @@ public class Produto {
 	public void setEstoque(boolean estoque) {
 		this.estoque = estoque;
 	}
-	public List<Produto> getProdutos() {
-		return produtos;
+	public Integer getId() {
+		return Id;
 	}
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
+	public void setId(Integer id) {
+		Id = id;
 	}
-	
+	public Vendedor getVendedor() {
+		return vendedor;
+	}
+	public void setVendedor(Vendedor vendedor) {
+		this.vendedor = vendedor;
+	}
 	
 }

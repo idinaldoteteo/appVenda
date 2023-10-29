@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infinet.appvenda.model.domain.Vendedor;
 import br.edu.infinet.appvenda.model.domain.Vestuario;
 import br.edu.infinet.appvenda.model.service.VestuarioService;
 
@@ -30,6 +31,7 @@ public class VestuarioLoader implements ApplicationRunner{
 		String[] conteudo = null;
 		Vestuario vestuario = null;
 		int posicao = 0;
+		int idVendedor = 0;
 		
 		while(linha != null) {
 			
@@ -45,6 +47,8 @@ public class VestuarioLoader implements ApplicationRunner{
 			vestuario.setCodigo(Integer.parseInt(conteudo[++posicao]));
 			vestuario.setPreco(Float.parseFloat(conteudo[++posicao]));
 			vestuario.setEstoque(Boolean.parseBoolean(conteudo[++posicao]));
+			idVendedor = Integer.parseInt(conteudo[++posicao]);
+			vestuario.setVendedor(Vendedor.CriarVendedor(idVendedor));
 			
 			service.incluir(vestuario);
 			

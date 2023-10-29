@@ -1,4 +1,4 @@
-P;Marca item 1;true;Descricao item 1;100;25.25;1000
-M;Marca item 2;false;Descricao item 2;200;35.35;2000
-G;Marca item 3;true;Descricao item 3;300;45.45;3000
-GG;Marca item 4;false;Descricao item 4;400;55.55;4000
+P;Blusa;true;Descricao item 1;10;25.25;1000;1
+M;Bermuda;false;Descricao item 2;20;35.35;2000;2
+G;Casaco;true;Descricao item 3;30;45.45;3000;3
+GG;Calça Jeans;false;Descricao item 4;40;55.55;4000;4

@@ -4,20 +4,23 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infinet.appvenda.model.domain.Vestuario;
+import br.edu.infinet.appvenda.model.repository.IVesturarioRepository;
 
 @Service
 public class VestuarioService {
 
-	private Map<Integer, Vestuario> vestuarioMap = new HashMap<Integer, Vestuario>();
+	@Autowired
+	private IVesturarioRepository vestuarioRepository;
 	
 	public Collection<Vestuario> ObterLista() {
-		return vestuarioMap.values();
+		return (Collection<Vestuario>) vestuarioRepository.findAll();
 	}
 
-	public void incluir(Vestuario produto) {
-		vestuarioMap.put(produto.getCodigo(), produto);
+	public void incluir(Vestuario vestuario) {
+		vestuarioRepository.save(vestuario);
 	}
 }
