@@ -21,4 +21,8 @@ public class LivroService {
 	public void incluir(Livro livro) {
 		livroRepository.save(livro);
 	}
+	
+	public long obterQtde() {
+		return livroRepository.count();
+	}
 }

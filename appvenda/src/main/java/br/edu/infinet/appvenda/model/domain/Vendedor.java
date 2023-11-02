@@ -2,6 +2,7 @@ package br.edu.infinet.appvenda.model.domain;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tbvendedor")
@@ -17,8 +20,12 @@ public class Vendedor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer Id;
+	@Size(min = 2, max = 50)
 	private String nome;
+	@Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
 	private String cpf;
+	@Size(min = 2, max = 50)
+	@Column(unique = true)
 	private String email;
 	@OneToMany
 	@JoinColumn(name = "id_vendedor")

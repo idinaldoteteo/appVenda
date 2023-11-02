@@ -23,4 +23,7 @@ public class VestuarioService {
 	public void incluir(Vestuario vestuario) {
 		vestuarioRepository.save(vestuario);
 	}
+	public long obterQtde() {
+		return vestuarioRepository.count();
+	}
 }

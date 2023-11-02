@@ -2,12 +2,15 @@ package br.edu.infinet.appvenda.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "tblivro")
 public class Livro extends Produto {
 
+	@Size(min = 2, max = 50)
 	private String nome;
+	@Size(min = 2, max = 50)
 	private String editora;
 	private float peso;
 	

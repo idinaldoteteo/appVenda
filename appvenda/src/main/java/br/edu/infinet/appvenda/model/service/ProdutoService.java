@@ -48,4 +48,8 @@ public class ProdutoService {
 		
 		System.out.println("---- Término do Relatório de todos os Produtos ----\n");
 	}
+	
+	public long obterQtde() {
+		return produtoRepository.count();
+	}
 }

@@ -1,8 +1,8 @@
 package br.edu.infinet.appvenda.model.service;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,4 +23,9 @@ public class VendedorService {
 	public void incluir(Vendedor vendedor) {		
 		repository.save(vendedor);
 	}
+	
+	public long obterQtde() {
+		return repository.count();
+	}
+	
 }
