@@ -25,4 +25,8 @@ public class LivroService {
 	public long obterQtde() {
 		return livroRepository.count();
 	}
+
+	public void Excluir(Integer id) {
+		livroRepository.deleteById(id);		
+	}
 }

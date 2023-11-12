@@ -52,4 +52,8 @@ public class ProdutoService {
 	public long obterQtde() {
 		return produtoRepository.count();
 	}
+
+	public void Excluir(Integer id) {
+		produtoRepository.deleteById(id);		
+	}
 }

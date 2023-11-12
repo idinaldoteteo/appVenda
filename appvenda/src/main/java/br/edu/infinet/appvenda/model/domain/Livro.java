@@ -8,9 +8,9 @@ import javax.validation.constraints.Size;
 @Table(name = "tblivro")
 public class Livro extends Produto {
 
-	@Size(min = 2, max = 50)
+	@Size(min = 5, max = 50)
 	private String nome;
-	@Size(min = 2, max = 50)
+	@Size(min = 5, max = 50)
 	private String editora;
 	private float peso;
 	

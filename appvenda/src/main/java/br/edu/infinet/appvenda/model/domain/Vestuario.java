@@ -2,12 +2,15 @@ package br.edu.infinet.appvenda.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tbvestuario")
 public class Vestuario extends Produto {
 
+	@NotBlank
 	private String tamanho;
+	@NotBlank
 	private String marca;
 	private boolean estampada;
 	

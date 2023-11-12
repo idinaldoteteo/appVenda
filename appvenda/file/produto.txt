@@ -6,3 +6,4 @@ L;Apredendo Java;Editora 1;100;Descricao item 1;5000;25.25;true;4;
 L;Apredendo C#;Editora 2;200;Descricao item 2;6000;35.35;true;3;
 L;Apredendo Javascript;Editora 3;500;Descricao item 3;7000;45.45;true;2;
 L;Apredendo Python;Editora 4;1100;Descricao item 4;8000;55.55;true;1;
+L;Apredendo Python;Editora 4;1100;Descricao item 4;8000;-55.55;true;1;

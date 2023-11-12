@@ -3,6 +3,8 @@ package br.edu.infinet.appvenda;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -41,7 +43,18 @@ public class VendedorLoader implements ApplicationRunner{
 			vendedor.setCpf(conteudo[++posicao]);
 			vendedor.setEmail(conteudo[++posicao]);		
 			
-			service.incluir(vendedor);
+			try {
+				service.incluir(vendedor);	
+			} catch (ConstraintViolationException ex) {
+				StringBuilder builder = new StringBuilder();
+				builder
+					.append("[VALIDAÇÃO]")
+					.append(this.getClass().getSimpleName())
+					.append(ex.getMessage());
+				
+				FileLogger.LogException(builder.toString());
+			}
+			
 			
 			linha = leitura.readLine();
 		}

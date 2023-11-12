@@ -1,8 +1,6 @@
 package br.edu.infinet.appvenda.model.service;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +24,10 @@ public class VendedorService {
 	
 	public long obterQtde() {
 		return repository.count();
+	}
+
+	public void Excluir(Integer id) {
+		repository.deleteById(id);
 	}
 	
 }
