@@ -5,6 +5,8 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infinet.appvenda.clients.IEnderecoClient;
+import br.edu.infinet.appvenda.model.domain.Endereco;
 import br.edu.infinet.appvenda.model.domain.Vendedor;
 import br.edu.infinet.appvenda.model.repository.IVendedorRepository;
 
@@ -14,11 +16,18 @@ public class VendedorService {
 	@Autowired
 	private IVendedorRepository repository;
 	
+	@Autowired
+	private IEnderecoClient enderecoClient;
+	
 	public Collection<Vendedor> ObterLista() {
 		return (Collection<Vendedor>) repository.findAll();
 	}
 
-	public void incluir(Vendedor vendedor) {		
+	public void incluir(Vendedor vendedor) {	
+		Endereco endereco = enderecoClient.buscarCep(vendedor.getEndereco().getCep());
+		
+		vendedor.setEndereco(endereco);
+		
 		repository.save(vendedor);
 	}
 	

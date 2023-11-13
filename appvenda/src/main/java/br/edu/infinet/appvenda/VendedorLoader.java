@@ -11,6 +11,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infinet.appvenda.model.domain.Endereco;
 import br.edu.infinet.appvenda.model.domain.Vendedor;
 import br.edu.infinet.appvenda.model.service.VendedorService;
 
@@ -41,7 +42,8 @@ public class VendedorLoader implements ApplicationRunner{
 			vendedor = new Vendedor();			
 			vendedor.setNome(conteudo[posicao]);
 			vendedor.setCpf(conteudo[++posicao]);
-			vendedor.setEmail(conteudo[++posicao]);		
+			vendedor.setEmail(conteudo[++posicao]);
+			vendedor.setEndereco(Endereco.CriarEndereco(conteudo[++posicao]));
 			
 			try {
 				service.incluir(vendedor);	

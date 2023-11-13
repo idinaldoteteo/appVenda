@@ -2,6 +2,7 @@ package br.edu.infinet.appvenda.model.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,12 +10,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "tbvendedor")
+@Table(name = "tbvendedor" , 
+	uniqueConstraints = { 
+			@UniqueConstraint(columnNames = {"cpf"}),
+			@UniqueConstraint(columnNames = {"email"})
+	})
 public class Vendedor {
 
 	@Id
@@ -30,11 +37,19 @@ public class Vendedor {
 	@OneToMany
 	@JoinColumn(name = "id_vendedor")
 	private List<Produto> produtoList;
-	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 	
 	@Override
 	public String toString() {		
-		return String.format("[VENDEDOR] %s - %s - %s", nome, cpf, email);
+		return String.format("[VENDEDOR] id (%d) - nome (%s) - cpf (%s) - email (%s) - endereco (%s)", 
+				Id,
+				nome, 
+				cpf, 
+				email,
+				endereco
+				);
 	}
 	
 	public String getNome() {
@@ -73,6 +88,14 @@ public class Vendedor {
 		Vendedor vendedor = new Vendedor();
 		vendedor.setId(id);
 		return vendedor;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
 }

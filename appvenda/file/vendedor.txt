@@ -1,5 +1,5 @@
-cliente 1;113.456.789-10;client1@email;
-cliente 2;223.456.789-11;client2@email;
-cliente 3;333.456.789-22;client3@email;
-cliente 4;443.456.789-33;client4@email;
-c;443.456.789-33;client4@email;
+cliente 1;113.456.789-10;client1@email;20010020
+cliente 2;223.456.789-11;client2@email;11010020
+cliente 3;333.456.789-22;client3@email;01311100
+cliente 4;443.456.789-33;client4@email;11010020
+c;443.456.789-33;client4@email;20010020
