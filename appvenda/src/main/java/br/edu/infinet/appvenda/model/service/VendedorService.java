@@ -1,12 +1,14 @@
 package br.edu.infinet.appvenda.model.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infinet.appvenda.clients.IEnderecoClient;
+import br.edu.infinet.appvenda.clients.IVendaClient;
 import br.edu.infinet.appvenda.model.domain.Endereco;
 import br.edu.infinet.appvenda.model.domain.Vendedor;
 import br.edu.infinet.appvenda.model.repository.IVendedorRepository;
@@ -19,7 +21,7 @@ public class VendedorService {
 	
 	@Autowired
 	private IEnderecoClient enderecoClient;
-	
+		
 	public Vendedor pesquisar(String campoBusca) {
 		
 		return repository.findByCpf(campoBusca);

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import br.edu.infinet.appvenda.model.service.LivroService;
 import br.edu.infinet.appvenda.model.service.ProdutoService;
+import br.edu.infinet.appvenda.model.service.VendaService;
 import br.edu.infinet.appvenda.model.service.VendedorService;
 import br.edu.infinet.appvenda.model.service.VestuarioService;
 
@@ -24,10 +25,15 @@ public class AppController {
 
 	@Autowired
 	private VestuarioService vestuarioService;
+	
+	@Autowired
+	private VendaService vendaService; 
 
 	@GetMapping(value = "/")
 	public String showHome(Model model) {
-
+		
+		model.addAttribute("informacoes", vendaService.obterInformacoes());
+		
 		model.addAttribute("qtdeVendedor", vendedorService.obterQtde());
 		model.addAttribute("qtdeProduto", produtoService.obterQtde());
 		model.addAttribute("qtdeLivro", livroService.obterQtde());

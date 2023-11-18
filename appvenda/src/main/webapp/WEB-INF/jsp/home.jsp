@@ -38,6 +38,7 @@
 	</header>
 	<main>
 		<div class="container mt-3">
+		
 			<span class="badge rounded-pill bg-primary">Vendedor:${qtdeVendedor}</span> 
 			<span class="badge rounded-pill bg-secondary">Produto:${qtdeProduto}</span> 
 			<span class="badge rounded-pill bg-success">Livro:${qtdeLivro}</span> 
@@ -63,11 +64,31 @@
 					</tbody>
 				</table>
 			</c:if>
+			
+			<c:if test="${not empty informacoes}">
+				<p></p>
+				<table class="table table-striped">
+					<thead class="table-dark">
+						<tr>
+							<th>Informações:</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="item" items="${informacoes}">
+							<tr>
+								<td>${item}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:if>
+			
 			<c:if test="${not empty homeFeedbackPesquisaSucess}">
 				<div class="alert alert-success">
 					<strong>Sucesso!</strong> ${homeFeedbackPesquisaSucess}
 				</div>
 			</c:if>
+			
 			<c:if test="${not empty homeFeedbackPesquisaFail}">
 				<div class="alert alert-danger">
 					<strong>Erro!</strong> ${homeFeedbackPesquisaFail}
