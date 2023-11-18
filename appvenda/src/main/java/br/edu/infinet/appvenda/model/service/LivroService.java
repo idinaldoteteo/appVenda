@@ -1,6 +1,7 @@
 package br.edu.infinet.appvenda.model.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,10 @@ public class LivroService {
 
 	@Autowired	
 	private ILivroRepository livroRepository;	
+	
+	public List<Livro> pesquisar(String nome) {
+		return livroRepository.findByNome(nome);
+	}
 	
 	public Collection<Livro> ObterLista() {
 		return (Collection<Livro>) livroRepository.findAll();

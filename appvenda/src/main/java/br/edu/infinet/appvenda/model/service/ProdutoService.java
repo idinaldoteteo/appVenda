@@ -2,6 +2,7 @@ package br.edu.infinet.appvenda.model.service;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,11 @@ public class ProdutoService {
 
 	@Autowired
 	private IProdutoRepository produtoRepository;
+	
+	
+	public List<Produto> pesquisar(String campoBusca) {
+		return produtoRepository.findByCodigo(Integer.parseInt(campoBusca));
+	}
 	
 	public Collection<Produto> ObterLista() {
 		return (Collection<Produto>) produtoRepository.findAll();

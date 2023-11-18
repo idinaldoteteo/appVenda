@@ -16,7 +16,7 @@ public class Vestuario extends Produto {
 	
 	@Override
 	public String toString() {		
-		return String.format("[VESTUARIO] %s - %s - %s -%s", tamanho, marca, estampada, super.toString());
+		return String.format("[VESTUARIO] (tamanho)%s - (marca)%s - (estampada)%s -%s", tamanho, marca, estampada, super.toString());
 	}
 	
 	public String getTamanho() {

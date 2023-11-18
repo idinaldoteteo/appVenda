@@ -32,7 +32,7 @@ public class Produto {
 	
 	@Override
 	public String toString() {		
-		return String.format("[PRODUTO] id:%d - %s - %s - %.2f - %s", Id, descricao, codigo, preco, estoque);
+		return String.format("[PRODUTO] id:%d - (descricao)%s - (codigo)%s - (preco)%.2f - (estoque)%s", Id, descricao, codigo, preco, estoque);
 	}
 	
 	public String getDescricao() {

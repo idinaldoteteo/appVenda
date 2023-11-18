@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +35,7 @@ public class Vendedor {
 	@Size(min = 2, max = 50)
 	@Column(unique = true)
 	private String email;
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "id_vendedor")
 	private List<Produto> produtoList;
 	@OneToOne(cascade = CascadeType.PERSIST)
@@ -43,7 +44,7 @@ public class Vendedor {
 	
 	@Override
 	public String toString() {		
-		return String.format("[VENDEDOR] id (%d) - nome (%s) - cpf (%s) - email (%s) - endereco (%s)", 
+		return String.format("[VENDEDOR] id (%d) - (nome) %s - (cpf)%s - (email)%s - (endereco)%s", 
 				Id,
 				nome, 
 				cpf, 

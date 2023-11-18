@@ -16,7 +16,7 @@ public class Livro extends Produto {
 	
 	@Override
 	public String toString() {		
-		return String.format("[LIVRO] %s - %s - %.2f - %s", nome, editora, peso, super.toString());
+		return String.format("[LIVRO] (nome)%s - (editora)%s - (peso)%.2f - %s", nome, editora, peso, super.toString());
 	}
 	
 	public String getNome() {
