@@ -1,0 +1,6 @@
+P;Blusa;true;Descricao item 1;10;25.25;100;1
+M;Bermuda;false;Descricao item 2;20;35.35;200;2
+G;Casaco;true;Descricao item 3;30;45.45;300;3
+;Calça Jeans;false;Descricao item 4;40;55.55;500;4
+GG;;false;Descricao item 4;40;55.55;600;4
+GG;Calça Jeans;;Descricao item 4;40;55.55;700;4

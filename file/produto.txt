@@ -1,0 +1,4 @@
+V;P;Marca item 1;true;Descricao item 1;1000;25.25;true;4;
+V;G;Marca item 3;true;Descricao item 3;3000;45.45;true;2;
+L;Apredendo Java;Editora 1;100;Descricao item 1;5000;25.25;true;4;
+L;Apredendo C#;Editora 2;200;Descricao item 2;6000;35.35;true;3;
