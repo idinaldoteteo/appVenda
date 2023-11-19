@@ -2,6 +2,8 @@ package br.edu.infinet.appvenda.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infinet.appvenda.model.domain.Informacao;
@@ -16,16 +18,17 @@ public class InformacaoController {
 	@PostMapping(value = "/informacao/incluir")
 	public String incluir(Informacao informacao) {
 		
-		Informacao result = informacaoService.incluir(informacao);
+		informacaoService.incluir(informacao);
+		
+		return "redirect:/";
+	}
+	
+	@GetMapping(value = "/informacao/excluir/{id}")
+	public String excluir(@PathVariable Integer id) {
+		
+		informacaoService.excluir(id);
 		
 		return "redirect:/";
 	}
 }
 
-//public List<Informacao> obterLista(){		
-//	return informacaoClient.obterLista();
-//}
-//	
-//public Informacao incluir(Informacao informacao) {	
-//	return informacaoClient.incluir(informacao);
-//}

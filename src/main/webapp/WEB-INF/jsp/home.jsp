@@ -91,12 +91,14 @@
 							<thead class="table-dark">
 								<tr>
 									<th>Informações:</th>
+									<th>Ações</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="item" items="${informacoes}">
 									<tr>
 										<td>${item}</td>
+										<td><a href="/informacao/excluir/${item.id}">Excluir</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

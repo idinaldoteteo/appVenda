@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infinet.appvenda.model.domain.Livro;
-import br.edu.infinet.appvenda.model.domain.Produto;
 import br.edu.infinet.appvenda.model.service.LivroService;
-import br.edu.infinet.appvenda.model.service.ProdutoService;
 
 @Controller
 public class LivroController {
@@ -44,7 +42,7 @@ public class LivroController {
 	}
 
 	@GetMapping(value = "/livro/{id}/excluir")
-	public String Excluir(@PathVariable Integer id, Model model) {
+	public String Excluir(@PathVariable Integer id) {
 		
 		livroService.Excluir(id);
 		

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import br.edu.infinet.appvenda.clients.IInformacaoClient;
 import br.edu.infinet.appvenda.model.domain.Informacao;
@@ -21,5 +22,8 @@ public class InformacaoService {
 	public Informacao incluir(Informacao informacao) {	
 		return informacaoClient.incluir(informacao);
 	}
-	
+
+	public void excluir(Integer id) {
+		informacaoClient.excluir(id);
+	}	
 }

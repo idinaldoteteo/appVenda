@@ -1,7 +1,6 @@
 package br.edu.infinet.appvenda.controller;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +52,7 @@ public class VendedorController {
 		
 		carregaDadosGrid(model);
 		model.addAttribute("listagem", vendedorService.ObterLista());
-		model.addAttribute("searchFilter", "CPF");		
+		model.addAttribute("searchFilter", "cpf");		
 		
 		return appController.showHome(model);
 	}
